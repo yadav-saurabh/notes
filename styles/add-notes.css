@@ -1,0 +1,22 @@
+.add-note {
+  margin: 32px auto 16px auto;
+  text-align: center;
+}
+
+.add {
+  width: 600px;
+} 
+
+/** for tablet view  **/
+@media only screen and (max-width: 882px) {
+  .add {
+      width: 496px;
+  }
+}
+
+/** for mobile view **/
+@media only screen and (max-width: 612px) {
+  .add {
+      width: 90%;
+  }
+}
