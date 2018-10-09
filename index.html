@@ -24,6 +24,7 @@
     <!-- notes will be added here -->
   </div>
 
+  <!-- color palette -->
   <div id="color-palette">
     <button class="white"> </button>
     <button class="red"> </button>
@@ -37,6 +38,22 @@
     <button class="pink"> </button>
     <button class="brown"> </button>
     <button class="grey"> </button>
+  </div>
+
+
+  <!-- The Modal -->
+  <div id="my-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <label for="">Title</label>
+      <input id="edit-note-head" type="text" placeholder="Title">
+      <label for="">body</label>
+      <textarea id="edit-note-body" rows="3" cols="30" placeholder="Take a note..."></textarea>
+      <div class="model-btn">
+        <button id="update-note-btn">update</button>
+      </div>
+    </div>
   </div>
 
   <script src="./scripts/index.js" type="module"></script>

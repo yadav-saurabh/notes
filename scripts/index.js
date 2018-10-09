@@ -1,4 +1,5 @@
 "use strict";
+
 import Placement from "./placement.js";
 import Common from "./common.js";
 import Services from "./service.js";
@@ -14,16 +15,20 @@ class App {
    * constructor initialize the app and ades some events
    */
   constructor() {
-
-    /* to initilize the data for the first time run*/ 
+    
+    /* to initilize the data for the first time run*/
     this.init();
 
     /* add click event to add a note  */
     common.addNotesBtn.onclick = () => this.addNote();
-    
+
     /* add click event on select palette icon  */
     this.colorSelector = document.getElementById("color-selector");
     this.colorSelector.onclick = () => this.setColorPalette();
+
+    /* adding events on modal */
+    common.modalClose.onclick = () => common.closeModal();
+    window.onclick = this.modalCloseOutside;
   }
 
   /**
@@ -32,16 +37,19 @@ class App {
    */
   init() {
     let data = service.getAllNotes();
-    if(!data || data.length === 0) {
+    if (!data) {
       data = common.initialData();
       service.updateUID(4);
       service.addNotes(data);
     } else {
       data = service.getAllNotes();
     }
-    if ( data.length > 0  ) {
-      data.forEach(element => {
-        common.notesContainer.insertBefore( notes.createNote(element), common.notesContainer.firstChild );
+    if (data.length > 0) {
+      data.forEach((element) => {
+        common.notesContainer.insertBefore(
+          notes.createNote(element),
+          common.notesContainer.firstChild
+        );
         placement.adjust(16);
       });
     }
@@ -61,12 +69,15 @@ class App {
         color: common.addNoteWrapper.dataset.color
       };
       service.addNotes(data);
-      service.updateUID( service.getUID() + 1 );
-      common.notesContainer.insertBefore( notes.createNote(data), common.notesContainer.firstChild );
+      service.updateUID(service.getUID() + 1);
+      common.notesContainer.insertBefore(
+        notes.createNote(data),
+        common.notesContainer.firstChild
+      );
       placement.adjust(16);
-      head.value = '';
-      body.value = '';
-      common.addNoteWrapper.dataset.color= '';
+      head.value = "";
+      body.value = "";
+      common.addNoteWrapper.dataset.color = "";
     } else {
       alert("please provide value of head and body for the note");
     }
@@ -82,6 +93,17 @@ class App {
     }, 100);
     common.setColorPalette(common.addNoteWrapper);
   }
+
+  /**
+   * When the user clicks anywhere outside of the modal, close it
+   * @param {Event} e
+   */
+  modalCloseOutside(e) {
+    if (e.target == common.modal) {
+      common.closeModal();
+    }
+  };
+
 }
 
 const app = new App();

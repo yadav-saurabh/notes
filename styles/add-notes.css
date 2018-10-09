@@ -17,7 +17,9 @@
 }
 
 #add-note-head,
-#add-note-head::placeholder {
+#edit-note-head,
+#add-note-head::placeholder,
+#edit-note-head::placeholder {
   color: #000;
   font-size: 1rem;
   font-weight: bold;
@@ -29,7 +31,8 @@
   cursor: pointer;
 }
 
-#add-note-btn:hover {
+add-note-btn:hover,
+#update-note-btn:hover {
   background-color: #f5f5f5;
 }
 

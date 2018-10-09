@@ -10,10 +10,14 @@ export default class Service {
    */
   addNotes(data) {
     let modData = this.getAllNotes();
-    if (!modData || modData.length === 0) {
-      modData = data;
-    }else {
-      modData.push(data)
+    if ( !Array.isArray(data)) {
+      data = [data];
+    } 
+    if (!modData) {
+      modData = [];
+      modData = [...modData, ...data];
+    } else {
+      modData = [...modData, ...data];
     }
     localStorage.setItem("notes", JSON.stringify(modData));
   }
@@ -56,15 +60,6 @@ export default class Service {
    */
   getAllNotes() {
     return JSON.parse(localStorage.getItem("notes"));
-  }
-
-  /**
-   * get note object
-   * @param {number} id
-   */
-  getNoteById(id) {
-    const todo = this.getTodos().find((obj) => obj.id === id);
-    return todo;
   }
 
   /**
