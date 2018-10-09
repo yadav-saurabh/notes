@@ -29,61 +29,33 @@
   font-size: 1.4rem;
 }
 
-.note[data-color="black"], .black {
-  background-color:#000;
-  color:#fff;
+.action-wrapper {
+  text-align: right;
+  padding: 10px;
 }
 
-.note[data-color="red"], .red {
-  background-color:#ff8a80;
+.action-wrapper span {
+  height: 1.3rem;
+  cursor: pointer;
+  width: 2rem;
+  margin-left: 1rem;
+  display: inline-block;
 }
 
-.note[data-color="orange"], .orange {
-  background-color:#ffd180;
+.delete-note {
+  background: url(../assets/delete.svg) no-repeat;
+  background-size: 1.25rem;
 }
 
-.note[data-color="yellow"], .yellow {
-  background-color:#ffff8d;
+.edit-note {
+  background: url(../assets/edit.svg) no-repeat;
+  background-size: 1.25rem;
 }
 
-.note[data-color="green"], .green {
-  background-color:#ccff90;
+.color-select {
+  position: relative;
+  bottom: -0.15rem;
+  background: url(../assets/color.svg) no-repeat;
+  background-size: 1.25rem;
 }
 
-.note[data-color="teal"], .teal {
-  background-color:#a7ffeb;
-}
-
-.note[data-color="blue"], .blue {
-  background-color:#80d8ff;
-}
-
-.note[data-color="darkblue"], .darkblue {
-  background-color:#82b1ff;
-}
-
-.note[data-color="purple"], .purple {
-  background-color:#b388ff;
-}
-
-.note[data-color="pink"], .pink {
-  background-color:#f8bbd0;
-}
-
-.note[data-color="brown"], .brown {
-  background-color:#d7ccc8;
-}
-
-.note[data-color="grey"], .grey {
-  background-color:#cfd8dc;
-}
-
-
-
-/** for mobile view **/
-@media only screen and (max-width: 612px) {
-  .note {
-      width: 90%;
-      position: relative;
-  }
-}

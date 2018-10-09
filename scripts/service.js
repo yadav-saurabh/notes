@@ -4,16 +4,53 @@ export default class Service {
    * to update browser localStorage
    * @param {Object} data - note object
    * @param {number} data.id - note id
-   * @param {string} data.headig - note heading
+   * @param {string} data.head - note heading
    * @param {string} data.body - note body
    * @param {string} data.color - note color
-   * @param {Array} data.labels - note labels
    */
-  updateNotes(data) {
-    console.log(data);
-    // localStorage.setItem("notes", JSON.stringify(data));
+  addNotes(data) {
+    let modData = this.getAllNotes();
+    if (!modData || modData.length === 0) {
+      modData = data;
+    }else {
+      modData.push(data)
+    }
+    localStorage.setItem("notes", JSON.stringify(modData));
   }
 
+  /**
+   * update notes
+   * @param {Object} data - note object
+   * @param {number} data.id - note id
+   * @param {string} data.head - note heading
+   * @param {string} data.body - note body
+   * @param {string} data.color - note color
+   */
+  updateNotes({...data}) {
+    data.id = parseInt(data.id);
+    const index = this.getAllNotes().findIndex( el => el.id === data.id);
+    let modData = this.getAllNotes();
+    modData[index] = data;
+    localStorage.setItem("notes", JSON.stringify(modData));
+  }
+
+  
+  /**
+   * delete notes
+   * @param {Object} data - note object
+   * @param {number} data.id - note id
+   * @param {string} data.head - note heading
+   * @param {string} data.body - note body
+   * @param {string} data.color - note color
+   */
+  deleteNotes({...data}) {
+    data.id = parseInt(data.id);
+    const index = this.getAllNotes().findIndex( el => el.id === data.id);
+    let modData = this.getAllNotes();
+    modData.splice(index,1)
+    localStorage.setItem("notes", JSON.stringify(modData));
+  }
+  
   /**
    * to get browser localStorage
    */

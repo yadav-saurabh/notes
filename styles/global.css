@@ -26,6 +26,57 @@ body {
   height: 1.7rem;
   width: 1.5rem;
   margin: 2px;
+  cursor: pointer;
   border-radius:50%; 
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+
+
+div[data-color="black"], .black {
+  background-color:#000;
+  color:#fff;
+}
+
+div[data-color="red"], .red {
+  background-color:#ff8a80;
+}
+
+div[data-color="orange"], .orange {
+  background-color:#ffd180;
+}
+
+div[data-color="yellow"], .yellow {
+  background-color:#ffff8d;
+}
+
+div[data-color="green"], .green {
+  background-color:#ccff90;
+}
+
+div[data-color="teal"], .teal {
+  background-color:#a7ffeb;
+}
+
+div[data-color="blue"], .blue {
+  background-color:#80d8ff;
+}
+
+div[data-color="darkblue"], .darkblue {
+  background-color:#82b1ff;
+}
+
+div[data-color="purple"], .purple {
+  background-color:#b388ff;
+}
+
+div[data-color="pink"], .pink {
+  background-color:#f8bbd0;
+}
+
+div[data-color="brown"], .brown {
+  background-color:#d7ccc8;
+}
+
+div[data-color="grey"], .grey {
+  background-color:#cfd8dc;
 }
