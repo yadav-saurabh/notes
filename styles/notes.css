@@ -1,3 +1,4 @@
+
 .notes {
   margin: auto;
   position: relative;
@@ -6,6 +7,7 @@
 .note {
   margin: 8px;
   width: 240px;
+  color: #000;
   border-radius: 2px;
   position: absolute;
   background-color: #fafafa;
@@ -13,13 +15,70 @@
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 
+
 .note-heading {
   padding: 15px 15px 0 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .note-body {
   padding: 12px 15px 15px 15px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 1.4rem;
 }
+
+.note[data-color="black"], .black {
+  background-color:#000;
+  color:#fff;
+}
+
+.note[data-color="red"], .red {
+  background-color:#ff8a80;
+}
+
+.note[data-color="orange"], .orange {
+  background-color:#ffd180;
+}
+
+.note[data-color="yellow"], .yellow {
+  background-color:#ffff8d;
+}
+
+.note[data-color="green"], .green {
+  background-color:#ccff90;
+}
+
+.note[data-color="teal"], .teal {
+  background-color:#a7ffeb;
+}
+
+.note[data-color="blue"], .blue {
+  background-color:#80d8ff;
+}
+
+.note[data-color="darkblue"], .darkblue {
+  background-color:#82b1ff;
+}
+
+.note[data-color="purple"], .purple {
+  background-color:#b388ff;
+}
+
+.note[data-color="pink"], .pink {
+  background-color:#f8bbd0;
+}
+
+.note[data-color="brown"], .brown {
+  background-color:#d7ccc8;
+}
+
+.note[data-color="grey"], .grey {
+  background-color:#cfd8dc;
+}
+
+
 
 /** for mobile view **/
 @media only screen and (max-width: 612px) {

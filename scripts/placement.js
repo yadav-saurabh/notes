@@ -1,14 +1,8 @@
 "use strict";
 
-export default class Placement {
+import { notesContainer, notes } from "./consts.js";
 
-  /**
-   * initializing note elements and it container(notes)
-   */
-  constructor() {
-    this.containerNotes = document.getElementById("notes");
-    this.note = document.getElementsByClassName("note");
-  }
+export default class Placement {
 
   /**
    * 
@@ -17,17 +11,17 @@ export default class Placement {
   adjust(margin) {
 
     /* get the width of the conterNotes */
-    let containerWidth = this.containerNotes.getBoundingClientRect().width;
+    let containerWidth = notesContainer.getBoundingClientRect().width;
     
     /* get width of first child (note) */
-    const firstChildWidth = this.note[0].getBoundingClientRect().width + margin;
+    const firstChildWidth = notes[0].getBoundingClientRect().width + margin;
     
     /* calculate total columns needed */
     const cols = Math.max(Math.floor((containerWidth - margin) / firstChildWidth),1);
     
     /* setting container width after adding the margin */
     containerWidth = `${firstChildWidth * cols + margin}px`;
-    this.containerNotes.style.width = containerWidth;
+    notesContainer.style.width = containerWidth;
 
     /* for storing itemsMargin and items X-position of a column */
     const itemsMargin = [];
@@ -38,7 +32,7 @@ export default class Placement {
     }
 
     /* adjusting each items (note) */
-    for (let i = 0; i < this.note.length; i++) {
+    for (let i = 0; i < notes.length; i++) {
       
       /* find the index of smallest number in the array  */
       const itemIndex = itemsMargin.indexOf(Math.min(...itemsMargin));
@@ -48,15 +42,15 @@ export default class Placement {
       const posY = parseInt(itemsMargin[itemIndex]);
 
       /* translate the note to the empty position */
-      this.note[i].style.transform = `translate(${posX}px,${posY}px)`;
+      notes[i].style.transform = `translate(${posX}px,${posY}px)`;
 
       /* update the margin for the current column */
-      itemsMargin[itemIndex] += this.note[i].getBoundingClientRect().height + margin;
+      itemsMargin[itemIndex] += notes[i].getBoundingClientRect().height + margin;
     }
 
-    /* set the height of the container so that occupies the DOM region and new elements will be added below it */
+    /* set the height of the container so that its occupies the DOM region and new elements will be added below it */
     const containerHeight = Math.max(...itemsMargin);
-    this.containerNotes.style.height = `${containerHeight}px`;
+    notesContainer.style.height = `${containerHeight}px`;
 
   }
 }

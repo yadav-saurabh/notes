@@ -1,22 +1,58 @@
 .add-note {
   margin: 32px auto 16px auto;
-  text-align: center;
 }
 
-.add {
+.add-note-wrapper {
+  margin: auto;
   width: 600px;
-} 
+  background: #fafafa;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+
+#add-note-head, #add-note-body {
+  width: 100%;
+}
+
+#add-note-head, #add-note-head::placeholder {
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#add-note-btn {
+  margin: 5px;
+  /* float: right; */
+  cursor: pointer;
+}
+
+#add-note-btn:hover{
+  background-color: #f5f5f5;
+}
+
+#color-selector {
+  position: relative;
+  height: 1.3rem;
+  bottom: -0.15rem;
+  cursor: pointer;
+  width: 2rem;
+  margin-left: 1rem;
+  display: inline-block;
+  background: url(../assets/color.svg) no-repeat;
+  background-size: 1.25rem;
+}
+
 
 /** for tablet view  **/
 @media only screen and (max-width: 882px) {
-  .add {
+  .add-note * {
       width: 496px;
   }
 }
 
 /** for mobile view **/
 @media only screen and (max-width: 612px) {
-  .add {
+  .add-note {
       width: 90%;
   }
 }
