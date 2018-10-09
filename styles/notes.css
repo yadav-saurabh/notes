@@ -2,6 +2,7 @@
 .notes {
   margin: auto;
   position: relative;
+  max-width: 1000px;
 }
 
 .note {
