@@ -1,16 +1,22 @@
 
 # notes
 
-simple note making app 
+simple note making app, replication of google keep
 using html, css and javascript
 
 ### features
- - No dependencies
+- No dependencies
 - No third party libraries
+- plan HTML, CSS and JAVASCRIPT
 
-### to setup project
-```sh
-$ git clone https://github.com/yadav-saurabh/notes.git
-$ cd todo
-```
-simply run the html file using any simple static server
+
+ **DEMO :** [ https://yadav-saurabh.github.io/notes/](https://yadav-saurabh.github.io/notes/)
+
+
+| Preview |
+|:---------------:|
+|<a  target="_blank"  href="https://yadav-saurabh.github.io/agx-admin/"><img  src="https://raw.githubusercontent.com/yadav-saurabh/notes/master/assets/img.png"/></a>|
+
+
+
+simply run the html file using any simple **server** 
