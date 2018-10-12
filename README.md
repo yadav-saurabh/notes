@@ -15,7 +15,7 @@ using html, css and javascript
 
 | Preview |
 |:---------------:|
-|<a  target="_blank"  href="https://yadav-saurabh.github.io/agx-admin/"><img  src="https://raw.githubusercontent.com/yadav-saurabh/notes/master/assets/img.png"/></a>|
+|<a  target="_blank"  href="https://yadav-saurabh.github.io/notes/"><img  src="https://raw.githubusercontent.com/yadav-saurabh/notes/master/assets/img.png"/></a>|
 
 
 
