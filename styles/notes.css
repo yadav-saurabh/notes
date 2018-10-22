@@ -59,3 +59,13 @@
   background-size: 1.25rem;
 }
 
+/** for mobile view **/
+@media only screen and (max-width: 612px) {
+  .notes {
+    max-width: 100%;
+  }
+  .note { 
+    width: 96%;
+    margin: 2%;
+  }
+}

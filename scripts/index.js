@@ -15,20 +15,10 @@ class App {
    * constructor initialize the app and ades some events
    */
   constructor() {
-    
     /* to initilize the data for the first time run*/
     this.init();
-
-    /* add click event to add a note  */
-    common.addNotesBtn.onclick = () => this.addNote();
-
-    /* add click event on select palette icon  */
-    this.colorSelector = document.getElementById("color-selector");
-    this.colorSelector.onclick = () => this.setColorPalette();
-
-    /* adding events on modal */
-    common.modalClose.onclick = () => common.closeModal();
-    window.onclick = this.modalCloseOutside;
+    /* add events */
+    this.addEvents();
   }
 
   /**
@@ -53,6 +43,23 @@ class App {
         placement.adjust(16);
       });
     }
+  }
+
+  /**
+   * add events when app starts
+   */
+  addEvents() {
+    /* add click event to add a note  */
+    common.addNotesBtn.onclick = () => this.addNote();
+
+    /* add click event on select palette icon  */
+    this.colorSelector = document.getElementById("color-selector");
+    this.colorSelector.onclick = () => this.setColorPalette();
+
+    /* adding events on modal */
+    common.modalClose.onclick = () => common.closeModal();
+    window.onclick = this.modalCloseOutside;
+
   }
 
   /**
@@ -102,8 +109,7 @@ class App {
     if (e.target == common.modal) {
       common.closeModal();
     }
-  };
-
+  }
 }
 
 const app = new App();

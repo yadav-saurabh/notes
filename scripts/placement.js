@@ -11,25 +11,28 @@ export default class Placement {
    */
   adjust(margin) {
 
-    /* get the width of the conterNotes */
+    const marginX = (window.innerWidth < 612) ? 0 : margin;
+    const marginY = margin;
+    
+    /* get the width of the Note Container */
     let containerWidth = common.notesContainer.getBoundingClientRect().width;
     
     /* get width of first child (note) */
-    const firstChildWidth = common.notes[0].getBoundingClientRect().width + margin;
+    const firstChildWidth = common.notes[0].getBoundingClientRect().width + marginX;
     
     /* calculate total columns needed */
-    const cols = Math.max(Math.floor((containerWidth - margin) / firstChildWidth),1);
+    const cols = Math.max(Math.floor((containerWidth - marginX) / firstChildWidth),1);
     
     /* setting container width after adding the margin */
-    containerWidth = `${firstChildWidth * cols + margin}px`;
+    containerWidth = `${firstChildWidth * cols + marginX}px`;
     common.notesContainer.style.width = containerWidth;
 
     /* for storing itemsMargin and items X-position of a column */
     const itemsMargin = [];
     const itemsPosX = [];
     for (let i = 0; i < cols; i++) {
-      itemsPosX.push(i * firstChildWidth + margin);
-      itemsMargin.push(margin);
+      itemsPosX.push(i * firstChildWidth + marginX);
+      itemsMargin.push(marginY);
     }
 
     /* adjusting each items (note) */

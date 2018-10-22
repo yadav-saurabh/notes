@@ -1,6 +1,7 @@
 "use strict";
 let displayColorPalette = false;
 export default class Common {
+  
   constructor() {
     /* add note input and button*/
     this.addNotesBtn = document.getElementById("add-note-btn");

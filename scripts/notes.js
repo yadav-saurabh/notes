@@ -16,7 +16,7 @@ export default class Notes {
   }
   
   /**
-   * create the todo element and retuns a node of the type <li>
+   * create the note element and retuns a node of the type <div>
    * @param object
    */
   createNote(obj) {
@@ -68,6 +68,7 @@ export default class Notes {
 
   /**
    * click event on note to edit
+   * @param {Event} e
    */
   editNote(e) {
     const data = e.target.parentNode.parentNode.dataset;
@@ -79,7 +80,7 @@ export default class Notes {
 
   /**
    * update current note
-   * @param {*} data 
+   * @param {Object} data 
    */
   updateCurrentNote(data) {
     const notes = common.notes;
